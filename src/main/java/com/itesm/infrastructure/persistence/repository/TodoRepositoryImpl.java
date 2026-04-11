@@ -33,5 +33,9 @@ public class TodoRepositoryImpl implements TodoRepository, PanacheRepositoryBase
         return todos;
     }
 
-
+    @Override
+    @Transactional
+    public void delete(UUID id) {
+        deleteById(id);
+    }
 }
